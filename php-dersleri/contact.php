@@ -1,33 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Oray Yılmaz</title>
-</head>
-<body>
-
- <header> 
-    <nav>
-        <a href="">Anasayfa</a>
-        <a href="">Ürünler</a>
-        <a href="">İletişim</a>
-    </nav>
- </header>
+<?php $title = "iletişim" ?>
+<?php include 'partials/_header.php' ?>
 
   <main>
-      <h1>En çok satan ürünler</h1>
-      <ul>
-        <li>Samsung S22</li>
-        <li>Samsung S23</li>
-        <li>Samsung S24</li>
-      </ul>
+      <h1>İletişim</h1>
+        
+      <form action="">
+        <input type="text" name="" id="">
+        <input type="text" name="" id="">
+        <button type="submit">Gönder</button>
+      </form>
+
+
   </main>
 
-  <footer>
-    <p>Tüm hakları saklıdır.</p>
-  </footer>
-    
-</body>
-</html>
+ <?php include 'partials/_footer.php' ?>
