@@ -1,10 +1,10 @@
 <?php $title = "anasayfa" ?>
-<?php require 'partials/_variables.php' ?>
-<?php include 'partials/_header.php' ?>
+<?php require 'layout-1/partials/_variables.php' ?>
+<?php include 'layout-1/partials/_header.php' ?>
 
   <main>
       <h1>En çok satan ürünler</h1>
-      <?php include 'partials/_urunler.php' ?>
+      <?php include 'layout-1/partials/_urunler.php' ?>
   </main>
 
-<?php include 'partials/_footer.php' ?>
+<?php include 'layout-1/partials/_footer.php' ?>

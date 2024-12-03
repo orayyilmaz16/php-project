@@ -1,4 +1,4 @@
-<?php include 'partials/_variables.php'?>
+<?php include 'layout-1/partials/_variables.php'?>
  
 <ul>
        <?php foreach($urunler as $urun){

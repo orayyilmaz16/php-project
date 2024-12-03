@@ -1,5 +1,5 @@
 <?php $title = "iletişim" ?>
-<?php include 'partials/_header.php' ?>
+<?php include 'layout-1/partials/_header.php' ?>
 
   <main>
       <h1>İletişim</h1>
@@ -13,4 +13,4 @@
 
   </main>
 
- <?php include 'partials/_footer.php' ?>
+ <?php include 'layout-1/partials/_footer.php' ?>

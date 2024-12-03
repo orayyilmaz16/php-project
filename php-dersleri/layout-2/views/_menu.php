@@ -1,4 +1,4 @@
 <nav>
     <a href="">Anasayfa</a>
-    <a href="">İletişim</a>
+    <a href="../_contanct.php">İletişim</a>
 </nav>
