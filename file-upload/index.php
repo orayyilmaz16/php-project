@@ -1,28 +1,56 @@
 <?php 
 
 if(isset($_POST["btnFileUpload"]) && $_POST["btnFileUpload"] == "Upload") {
+     
+   if(isset($_FILES["fileToUpload"]) && $_FILES["fileToUpload"]["error"] == 0) {
     
+        $uploadOk = true;
+        $destinationPath = "./uploadedFiles/";
+        $filename = $_FILES["fileToUpload"]["name"];
+        $fileSize = $_FILES["fileToUpload"]["size"];
+        $dosya_uzantilari = array('jpg','png');
 
+        if(empty($filename)){
+            $uploadOk = false;
+            echo "dosya seçiniz";
+            echo "<br>";
+        }
 
+        if($fileSize > 500000){
+            $uploadOk = false;
+            echo "Dosya boyutu fazla";
+            echo "<br>";
+        }
 
-   $destinationPath = "./uploadedFiles/";
-   $filename = $_FILES["fileToUpload"]["name"];
+        $dosyaAdi = explode(".", $filename); ["1","jpg"];
+        $dosyaAdi_uzantisiz = $dosyaAdı[0];
+        $dosyaAdi_uzantisi = $dosyaAdi[1];
 
-  if(empty($filename)){
-     echo "dosya seçiniz";
-  }
+        if(!in_array($dosyaAdi_uzantisi, $dosya_uzantilari)){
+            $uploadOk = false;
+            echo "dosya uzantısı kabul edilmiyor";
+            echo "kabul edilen dosyalar: ".implode(",", $dosya_uzantilari);
+        }
 
-   $fileSourcePath = $_FILES["fileToUpload"]["tmp_name"];
+        $yeni_dosyaAdi = md5(time().$dosyaAdi_uzantisiz).'.'.$dosyaAdi_uzantisi;
 
-   $fileDestinationPath = $destinationPath.$filename;
+        $fileSourcePath = $_FILES["fileToUpload"]["tmp_name"];
+        $fileDestinationPath = $destinationPath.$yeni_dosyaAdi;
 
-   if(move_uploaded_file($fileSourcePath, $fileDestinationPath)){
-     echo "dosya yüklendi.";
-   }
-   else{
-     echo "hata";
-   }
+        if($uploadOk){
+            echo "dosya yüklenmedi.";
+        }else{
 
+             if(move_uploaded_file($fileSourcePath, $fileDestinationPath)){
+                echo "dosya yüklendi.";
+            }
+            else{
+                echo "hata";
+            }
+        }
+    } else{
+        echo "bir hata oluştu.";
+    }
 }
 
 
