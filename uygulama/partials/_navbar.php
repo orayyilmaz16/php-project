@@ -26,12 +26,27 @@
         </ul>
 
         <ul class="navbar-nav me-2">
-            <li class="nav-item">
-                <a href="login.php" class="nav-link">Giriş Yap</a>
-            </li>
-            <li class="nav-item">
-                <a href="register.php" class="nav-link">Kayıt Ol</a>
-            </li>  
+                
+            <?php if(isset($_COOKIE["auth"])):  ?>
+           
+                <li class="nav-item">
+                    <a href="logout.php" class="nav-link">Çıkış Yap</a>
+                </li>
+                <li class="nav-item">
+                    <a href="login.php" class="nav-link">Hoş Geldiniz, <?php echo $_COOKIE["auth"]["name"] ?></a>
+                </li>
+               
+            <?php else: ?>
+
+                <li class="nav-item">
+                    <a href="login.php" class="nav-link">Giriş Yap</a>
+                </li>
+                <li class="nav-item">
+                    <a href="register.php" class="nav-link">Kayıt Ol</a>
+                </li>  
+           
+            <?php endif; ?>
+           
         </ul>
         
         
